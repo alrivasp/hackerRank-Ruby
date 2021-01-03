@@ -1,0 +1,18 @@
+Este es un ejercicio maravilloso que explica el concepto de bucles infinitos.
+
+"Un hacker practica en HackerRank hasta obtener una calificación de O (1) leído como (Oh-uno)"
+
+Un bucle infinito en Ruby tiene la forma
+
+loop do
+end
+Use un bucle infinito y llame al método coder.practicedentro de él y rompa si coder.oh_one?es verdadero.
+
+break if las condiciones en Ruby son de la forma
+
+if <condition>
+    break
+end
+o una sola línea
+
+break if <condition>  

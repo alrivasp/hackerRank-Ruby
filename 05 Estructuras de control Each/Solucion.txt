@@ -1,0 +1,29 @@
+i = 0
+while i < array.size
+    user = array[i]
+    # do stuff
+    i += 1
+end
+
+
+def scoring(array)
+    array.each(&:update_score)
+end
+
+
+# Option 1
+def scoring(array)
+    # iterate through each of the element in array using *each* 
+    array.each do |user|
+        user.update_score
+    end
+end
+
+# Option 2
+def scoring(array)
+    # iterate through each of the element in array using *each* 
+    array.each { 
+        |user|
+        user.update_score
+        }
+end

@@ -1,0 +1,39 @@
+ef select_arr(arr)
+  # select and return all odd numbers from the Array variable `arr`
+  arr.select(&:odd?)
+end
+
+def reject_arr(arr)
+  # reject all elements which are divisible by 3
+  arr.reject {|n| (n % 3).zero? }
+end
+
+def delete_arr(arr)
+  # delete all negative elements
+  arr.delete_if(&:negative?)
+end
+
+def keep_arr(arr)
+  # keep all non negative elements ( >= 0)
+  arr.keep_if(&:positive?)
+end
+
+
+
+
+
+def select_arr(arr)
+  select_arr = arr.select(&:odd?)
+end
+
+def reject_arr(arr)
+  reject_arr = arr.reject {|x| x % 3 == 0}
+end
+
+def delete_arr(arr)
+  delete_arr = arr.delete_if{ |a| a > 0 }.map{ |a| -a }
+end
+
+def keep_arr(arr)
+  keep_arr = arr.keep_if {|a| a < 4 }
+end

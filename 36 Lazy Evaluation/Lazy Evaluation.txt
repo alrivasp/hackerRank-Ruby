@@ -1,0 +1,40 @@
+La evaluación perezosa es una estrategia de evaluación que retrasa la valoración de una expresión hasta que se necesita su valor.
+
+Rubí introdujo una función de enumeración perezosa. La evaluación perezosa aumenta el rendimiento al evitar cálculos innecesarios y tiene la capacidad de crear estructuras de datos potencialmente infinitas.
+
+Ejemplo:
+
+power_array = -> (power, array_size) do 
+    1.upto(Float::INFINITY).lazy.map { |x| x**power }.first(array_size) 
+end
+
+puts power_array.(2 , 4)    #[1, 4, 9, 16]
+puts power_array.(2 , 10)   #[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+puts power_array.(3, 5)     #[1, 8, 27, 64, 125]
+En este ejemplo, lazyevita cálculos innecesarios para calcular power_array .
+Si eliminamos lazy del código anterior, entonces nuestro código intentaría calcular todo que van desde a flotar :: INFINITY .
+Para evitar tiempos de espera y excepciones de asignación de memoria, utilizamos lazy. Ahora, nuestro código solo calculará hasta primero (tamaño_arreglo) .
+
+Tarea
+
+Su tarea es imprimir una matriz de los primeros números primos palindrómicos.
+Por ejemplo, el primero los números primos palindrómicos son .
+
+Formato de entrada
+
+Una sola línea de entrada que contiene el entero .
+
+Restricciones
+
+No te dan cuan grande  es.
+
+Formato de salida
+
+Imprima una matriz de la primera  primos palindrómicos.
+
+Entrada de muestra
+
+5
+Salida de muestra
+
+[2, 3, 5, 7, 11]

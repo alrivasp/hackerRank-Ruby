@@ -1,0 +1,59 @@
+Ruby ofrece varios enumerables sobre colecciones que verifican la validez de los objetos que contiene.
+
+Considere el siguiente ejemplo:
+
+> arr = [1, 2, 3, 4, 5, 6]
+=> [1, 2, 3, 4, 5, 6]
+> h = {"a" => 1, "b" => 2, "c" => 3}
+=> {"a" => 1, "b" => 2, "c" => 3}
+¿El cualquiera? El método devuelve truesi el bloque alguna vez devuelve un valor que no sea falseo nilpara cualquier elemento que se le haya pasado:
+
+> arr.any? {|a| a % 2 == 0} # checks if any number in the array is even
+=> True
+> h.any? {|key, value| value.is_a? String} # checks if any value of the Hash object is of the type String
+=> False
+¿El todo? El método regresa truesi el bloque nunca regresa falseo nilpor cualquier elemento que se le haya pasado:
+
+> arr.all? {|a| a.is_a? Integer} # checks if all elements of the array are of the type Integer
+=> True
+> h.all? {|key, value| key.is_a? String} # checks if all keys of the Hash object are of the type String
+=> True
+¿El ninguno? El método regresa truesi el bloque nunca regresa truepor ningún elemento que se le haya pasado:
+
+> arr.none? {|a| a.nil?} # Checks if none of the elements in the array are of nil type
+=> True
+> h.none? {|key, value| value < 3} # checks if all values of the Hash object are less than 3
+=> False
+El método de búsqueda devuelve el primer elemento para el que el bloque no es false:
+
+> arr.find {|a| a > 5} # returns the first element greater than 5 and `nil` if none satisfies the condition
+=> 6
+> h.find {|key, value| key == "b"} # returns an Array of the first match [key, value] that satisfies the condition and nil otherwise
+=> ["b", 2]
+Tarea
+Según lo que ha aprendido anteriormente, complete las funciones declaradas en su editor a continuación.
+
+
+
+
+
+def func_any(hash)
+    # Check and return true if any key object within the hash is of the type Integer
+    # If not found, return false.
+end
+
+def func_all(hash)
+    # Check and return true if all the values within the hash are Integers and are < 10
+    # If not all values satisfy this, return false.
+end
+
+def func_none(hash)
+    # Check and return true if none of the values within the hash are nil
+    # If any value contains nil, return false.
+end
+
+def func_find(hash)
+    # Check and return the first object that satisfies either of the following properties:
+    #   1. There is a [key, value] pair where the key and value are both Integers and the value is < 20 
+    #   2. There is a [key, value] pair where the key and value are both Strings and the value starts with `a`.
+end

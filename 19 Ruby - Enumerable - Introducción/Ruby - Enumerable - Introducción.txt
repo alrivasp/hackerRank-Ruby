@@ -1,0 +1,12 @@
+En las estructuras de control tutorial , hemos aprendido acerca de diversos métodos para iterar sobre una colección como unless, loopy el más utilizado each método .
+
+Ruby, sin embargo, proporciona un Enumerablemódulo que empaqueta un montón de métodos que se pueden usar con cualquier otra clase incluyéndolo (denominado mezcla ). Eso significa que los programadores no tienen que escribir todos esos métodos muchas veces diferentes para diferentes objetos. Siempre que el objeto personalizado defina un eachmétodo e incluya un Enumerablemódulo, puede obtener acceso a toda su magia.
+
+En este desafío, se le ha proporcionado un objeto personalizado llamado colorsque define su propio eachmétodo. Debe iterar sobre los elementos y devolver un que Arraycontenga los valores.
+
+
+
+
+def iterate_colors(colors)
+  # Your code here
+end

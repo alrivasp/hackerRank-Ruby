@@ -1,0 +1,36 @@
+En nuestros desafíos anteriores, exploramos algunas formas de pasar argumentos a nuestros métodos; sin embargo, estaban limitados en términos de la cantidad de argumentos que podemos transmitirles. El uso de parámetros predeterminados nos permite reducir la cantidad de argumentos en algunos casos, pero no es útil en situaciones en las que necesitamos pasar una cantidad variable (y potencialmente muy grande) de argumentos.
+
+Considere un método que calcula la suma de números. Obviamente, no querrá escribir métodos diferentes que tengan en cuenta un número variable de argumentos (por ejemplo, sumar dos números, tres números, cuatro números, etc.). Aquí es donde entra en juego Ruby * . Eche un vistazo al siguiente código:
+
+def  suma ( primero ,  * resto ) 
+    resto . reducir ( primero )  {  | o ,  x |  o  +  x  } 
+fin
+
+>  suma ( 1 )  # primero = 1, resto = [] 
+1 
+>  suma ( 1 ,  2 )  # primero = 1, resto = [2] 
+3 
+>  suma ( 1 ,  2 ,  3 )  # primero = 1, resto = [ 2, 3] 
+6
+Anteponer un asterisco ( * ), o splat , a un parámetro asigna todos los valores a partir de esa posición en la llamada al método a una matriz llamada rest dentro del método. En este caso, nuestro método tiene al menos un parámetro obligatorio llamado first, y luego los valores subsiguientes se asignan como una matriz a rest.
+
+Escriba un método llamado full_name que genere los nombres completos de las personas que reciben su primer nombre, seguido de un número variable de segundos nombres, seguido de su apellido.
+
+Entrada de muestra 0
+
+> full_name('Harsha', 'Bhogle')
+Salida de muestra 0
+
+"Harsha Bhogle"
+Entrada de muestra 1
+
+> full_name('Pradeep', 'Suresh', 'Satyanarayana')
+Salida de muestra 1
+
+"Pradeep Suresh Satayanarayana"
+Entrada de muestra 2
+
+> full_name('Horc', 'G.', 'M.', 'Moon')
+Salida de muestra 2
+
+"Horc G. M. Moon"

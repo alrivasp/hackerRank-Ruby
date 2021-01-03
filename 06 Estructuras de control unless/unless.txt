@@ -1,0 +1,19 @@
+Ha actualizado la puntuación de cada usuario de HackerRank que participó en un concurso. A veces, los administradores de HackerRank también participan en un concurso determinado, pero se tiene cuidado de asegurarse de que sus envíos no obtengan ningún puntaje y su puntaje no se actualice.
+
+Al igual que en el desafío anterior, se le proporciona un método scoringcon una matriz pasada como argumento. Cada elemento de la matriz es de clase User.
+
+Usertiene dos métodos públicos is_admin?y update_score. Su tarea en este desafío es utilizar la estructura de control unlessy actualizar todos los elementos de la matriz que no lo son admins.
+
+Insinuación
+
+unless user.is_admin?
+    user.update_score
+end
+o
+
+user.update_score unless user.is_admin? 
+El código anterior es un trazador de líneas de Ruby.
+
+Explicación
+
+unless es el equivalente lógico de if not

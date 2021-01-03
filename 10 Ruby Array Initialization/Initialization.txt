@@ -1,0 +1,25 @@
+Una de las estructuras de datos más utilizadas en Ruby es Ruby Array, y a continuación vemos varios métodos para inicializar una matriz de ruby.
+
+Su tarea es inicializar tres variables diferentes como se explica a continuación.
+
+Inicializar una matriz vacía con el nombre de la variable array
+Insinuación
+
+array = Array.new
+o
+
+array = []
+Inicialice una matriz con exactamente un nilelemento con el nombre de la variablearray_1
+Insinuación
+
+array_1 = Array.new(1)
+o
+
+array_1 = [nil]
+Inicialice una matriz con exactamente dos elementos con valor 10usando el nombre de la variable array_2.
+Insinuación
+
+array_2 = Array.new(2, 10)
+o
+
+array_2 = [10, 10]

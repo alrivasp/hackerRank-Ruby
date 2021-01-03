@@ -1,0 +1,39 @@
+En Ruby, las cadenas son objetos de la clase String , que define un poderoso conjunto de operaciones y métodos para manipular texto (por ejemplo, indexar, buscar, modificar, etc.). A continuación, se muestran algunas formas sencillas de crear cadenas:
+
+my_string = "Hello." # create a string from a literal
+my_empty_string = String.new # create an empty string
+my_copied_string = String.new(my_string) # copy a string to a new variable
+
+Hasta ruby 1.8, Las cadenas no eran más que una colección de bytes. Los datos se indexaron por recuento de bytes, el tamaño se expresó en términos de número de bytes, etc. Desde Ruby 1.9, Las cadenas tienen información de codificación adicional adjunta a los bytes que proporciona información sobre cómo interpretarlas. Por ejemplo, este código:
+
+str = "With ♥!"
+print("My String's encoding: ", str.encoding.name) 
+print("\nMy String's size: ", str.size)
+print("\nMy String's bytesize: ", str.bytesize)
+produce esta salida:
+
+My String's encoding: UTF-8
+My String's size: 7
+My String's bytesize: 9
+Puede hacer las siguientes observaciones sobre el código anterior:
+
+El literal de cadena crea un objeto que tiene varios métodos accesibles.
+La cadena tiene información de codificación adjunta que indica que es una cadena UTF-8 .
+El tamaño de una cadena corresponde al número de caracteres que vemos.
+El tamaño de bytes de una cadena corresponde al espacio real que ocupan los caracteres en la memoria (el símbolo ♥ requiere 3bytes en lugar de 1).
+A pesar de que UTF-8  es el estilo de codificación más popular (y recomendado) para contenido, Ruby admite 100 otras codificaciones (prueba PUTS eNCODING.LIST para ver la lista completa). Con esto en mente, debemos aprender a convertir entre diferentes codificaciones.
+
+Tarea
+En este desafío, practicamos la configuración de la información de codificación para alguna cadena de texto utilizando los métodos de codificación de Ruby . Escriba una función llamada transcodificación que toma un cadena codificada como parámetro, la convierte en un UTF-8  cadena codificada y devuelve el resultado.
+
+Formato de entrada
+
+Nuestro verificador de código oculto llamará a su función, pasándole un ISO-8859-1  cadena codificada como argumento.
+
+Restricciones
+
+Su función debe llamarse transcodificar .
+
+Formato de salida
+
+Tu función debe devolver UTF-8 un  cadena codificada.

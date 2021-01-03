@@ -1,0 +1,19 @@
+Cada objeto en Ruby puede tener métodos asociados. Para demostrar esto, queremos que imprima si un número es par o impar. A numbertiene un even?método asociado, que devuelve trueo se falsebasa en la paridad del número.
+
+Suponiendo que una variable numberya está definida, verifique si un dado numberes par o no.
+
+Insinuación
+
+Escriba en el editor de código
+
+return number.even?
+o
+
+number.even?
+Formato de entrada
+
+La primera línea de entrada contiene un número entero N. El siguiente N contiene un número entero en cada línea.
+
+Formato de salida
+
+La salida es manejada por el código escrito en el editor.

@@ -1,0 +1,45 @@
+La clase de matriz también permite seleccionar y devolver un subconjunto de una matriz en función de algunos criterios definidos en un bloque (un bloque es un grupo de código dentro de {} que acepta una variable y devuelve un valor).
+
+Seleccionar elementos que satisfagan un criterio dado
+Rechazar elementos que satisfagan un criterio dado
+ > arr = [3, 4, 2, 1, 2, 3, 4, 5, 6]
+ > arr.select {| a | a> 2}
+ => [3, 4, 3, 4, 5, 6]
+ > arr.reject {| a | a> 2}
+ => [2, 1, 2]
+ > arr
+ => [3, 4, 2, 1, 2, 3, 4, 5, 6]
+ > arr.drop_ while {| a | a> 1} # elimina elementos hasta que el bloque devuelve falso por primera vez
+ => [1, 2, 3, 4, 5, 6]
+ 
+Como puede ver, la matriz original permanece sin cambios. A esto se le llama selección no destructiva.
+Para el comportamiento destructivo (cambiar a la matriz original), Ruby proporciona los siguientes métodos:
+
+ > arr = [3, 4, 2, 1, 2, 3, 4, 5, 6]  
+ > arr.delete_if {|a| a < 2}
+  => [3, 4, 2, 2, 3, 4, 5, 6]  
+ > arr.keep_if {|a| a < 4}  
+ => [3, 2, 2, 3]
+Nota
+
+Un elemento de un bloque se selecciona, rechaza, elimina o mantiene en función del valor Trueo Falsegenerado por ese bloque en ese elemento.
+Para un comportamiento destructivo para selecty / rejecto cualquier método en el que se desee hacer cumplir un cambio en la matriz original, !se puede usar a al final del método, es decir, select!yreject!
+En este desafío, debe completar las funciones a continuación utilizando la sintaxis como se explicó anteriormente.
+
+
+
+def select_arr(arr)
+  # select and return all odd numbers from the Array variable `arr`
+end
+
+def reject_arr(arr)
+  # reject all elements which are divisible by 3
+end
+
+def delete_arr(arr)
+  # delete all negative elements
+end
+
+def keep_arr(arr)
+  # keep all non negative elements ( >= 0)
+end

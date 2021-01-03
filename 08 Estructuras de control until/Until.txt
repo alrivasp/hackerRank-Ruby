@@ -1,0 +1,23 @@
+Este desafío tiene una hermosa respuesta de una sola línea.
+
+"Un hacker practica en HackerRank hasta obtener una calificación de O (1) leído como (Oh-uno)"
+
+Llame al método coder.practicehasta que se coder.oh_one?convierta true.
+
+Utilice la untilestructura de control.
+
+untiles el equivalente lógico de while not.
+
+Insinuación
+
+while not <condition>
+    <code>
+end
+o
+
+until <condition>
+    <code>
+end
+o el hermoso one-liner
+
+<code> until <condition>  

@@ -1,0 +1,66 @@
+def factorial
+    yield
+end
+
+n = gets.to_i
+factorial do 
+    puts  (1..n).reduce(:*)
+end
+
+
+
+def file_open_write(name)
+  begin
+    f = File.open(name, "w")
+    yield f
+  ensure
+    f.close
+  end
+end
+
+# usage example:
+file_open_write("test.txt") do |f|
+  f.puts "write something"
+end
+
+
+
+
+def integrate(x0: 0.0, x1: 1.0, steps: 1000)
+  # check arguments ALWAYS
+  raise ArgumentError, 
+    "x0 not Float" unless x0.is_a? Float
+  raise ArgumentError, 
+    "x1 not Float" unless x1.is_a? Float
+  raise ArgumentError, 
+    "steps not Fixnum" unless steps.is_a? Fixnum
+  # check user function returns a Float
+  raise RuntimeError, 
+    "function must return a Float" unless yield(x0).is_a? Float
+  
+  sum = 0.5 * (yield(x0) + yield(x1))
+  (1).upto(steps - 1) do |k|
+  	sum = sum + yield(x0 + k * (x1 - x0) / steps.to_f)
+  end
+  return sum
+end
+
+# Now we try this function with a trivial example. 
+# Integral of sin(x) between 0 and 2*PI is = 0
+
+integrate(x1: 2 * Math::PI) { |x| Math::sin(x) }
+
+# => 1.1373714470241936e-14
+# that is a numerical zero.
+
+
+
+def factorial(n)
+  result = (1..n).reduce(1) { |all,x| all *= x }
+  yield(result)
+end
+
+n = gets.to_i
+factorial(n) do |result| 
+  puts result
+end

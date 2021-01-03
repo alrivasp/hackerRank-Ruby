@@ -1,0 +1,32 @@
+En este desafío, le mostraremos formas en las que podemos agregar pares clave-valor a los objetos Hash, eliminar claves de ellos y retenerlos en función de una lógica.
+
+Considere el siguiente Hashobjeto:
+
+h = Hash.new
+h.default = 0
+Se puede agregar un nuevo par clave-valor usando o el storemétodo
+
+h [clave] = valor
+
+o
+
+h.store(key, value)
+Una clave existente se puede eliminar usando el deletemétodo
+
+h.delete (clave)
+
+Para la selección y eliminación destructivas, podemos usar keep_ify delete_ifcomo se ve en Array-Selection
+
+> h = {1 => 1, 2 => 4, 3 => 9, 4 => 16, 5 => 25}
+ => {1 => 1, 2 => 4, 3 => 9, 4 => 16, 5 => 25}
+> h.keep_if {|key, value| key % 2 == 0} # or h.delete_if {|key, value| key % 2 != 0}
+ => {2 => 4, 4 => 16}
+Nota
+
+Para la selección o el rechazo no destructiva, podemos utilizar select, rejecty drop_whilesimilar a la Matriz-Selección
+
+En este desafío, hackerrankya se creó un objeto hash llamado . Tienes que agregar
+
+Un par clave-valor [543121, 100] para el hackerrankobjeto mediantestore
+Conserve todos los pares clave-valor donde las claves sean enteros (pista: is_a? Integer)
+Elimina todos los pares clave-valor donde las claves tienen valores pares.

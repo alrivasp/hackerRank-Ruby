@@ -1,0 +1,41 @@
+En nuestros desafíos anteriores, hemos estado usando métodos ( def method() .. end construcción) para abstraer operaciones compuestas, realizar manipulaciones de datos y aprender varios conceptos del lenguaje, sin hablar con mucho detalle sobre el concepto de métodos en sí mismos y cómo son útiles para un programador. En este conjunto de desafíos, exploraremos los principios rectores detrás de los métodos, aprenderemos más características y cómo usarlas de manera eficiente en nuestros programas.
+
+En términos más simples, un método es un grupo de varias expresiones (bloque, por así decirlo) a las que se puede hacer referencia con un nombre, se les pueden pasar algunos argumentos (entrada) y se asocian con uno o más objetos.
+
+Si ha programado antes, puede notar que la descripción anterior suena casi igual que las funciones en otros lenguajes (por ejemplo, Python) excepto la última parte que habla sobre la asociación con uno o más objetos. Puede ser un poco trivial de comprender, ya que las clases no se han introducido, pero lo que significa es que estos métodos, aunque parecen funciones globales, son métodos privados de una Object clase raíz en la que se definen e invocan implícitamente. automáticamente.
+
+Entonces, cuando escribes ...
+
+def hello_world
+    'Eha! Ruby'
+end
+
+> hello_world
+'Eha! Ruby'
+
+Básicamente, está agregando un método privado a la Objectclase:
+
+class Object
+    private
+
+    def hello_world2
+        'Eha! Ruby'
+    end
+end
+
+> hello_world2
+=> 'Eha! Ruby'
+
+Este, sin embargo, no es el foco de este desafío. En cambio, fue solo para mostrarte la verdadera naturaleza de objeto de Ruby, y volveremos a ello más adelante durante nuestros desafíos en las clases.
+
+En este desafío, debe escribir un método prime?que tome un argumento y devuelva trueo falsedependiendo de si el número es primo o no.
+
+> prime? 3
+true
+> prime? 17
+true
+> prime? 22
+false
+
+Otras lecturas
+Estos métodos, a diferencia de las funciones en otros lenguajes de programación orientados a objetos (por ejemplo, Python), no son ciudadanos de primera clase , porque no pueden pasarse a otros métodos como argumentos, devolverse por otros métodos o asignarse a variables.

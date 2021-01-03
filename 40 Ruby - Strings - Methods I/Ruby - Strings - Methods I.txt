@@ -1,0 +1,29 @@
+La información de texto se puede leer de diversas fuentes y, a menudo, no es adecuada para el procesamiento directo o el uso de funciones básicas. Esto requiere métodos de posprocesamiento y fijación de datos. En este tutorial, aprenderemos cómo eliminar los espacios en blanco flanqueantes y la nueva línea de las cadenas.
+
+String.chomp(separator=$/): Devuelve una nueva cadena con el separador dado eliminado del final de la cadena (si está presente). Si $ / no se ha cambiado del separador de registros Ruby predeterminado, chomp también elimina los caracteres de retorno de carro (es decir, eliminará \ n, \ r y \ r \ n).
+
+> "Hello World!  \r\n".chomp
+"Hello World!  "
+> "Hello World!".chomp("orld!")
+"Hello W"
+> "hello \n there".chomp
+"hello \n there"
+
+String.strip - Devuelve una nueva cadena con los espacios en blanco iniciales y finales eliminados.
+
+> "    hello    ".strip
+"hello"
+> "\tgoodbye\r\n".strip
+"goodbye"
+
+String.chop- Devuelve una nueva cadena con el último carácter eliminado. Tenga en cuenta que los retornos de carro (\ n, \ r \ n) se tratan como un solo carácter y, en caso de que no estén presentes, se eliminará un carácter de la cadena .
+
+> "string\n".chop
+"string"
+> "string".chop
+"strin"
+
+En este desafío, su tarea es codificar un process_textmétodo, que toma una matriz de cadenas como entrada y devuelve una sola cadena unida con todos los espacios en blanco flanqueantes y las nuevas líneas eliminadas. Cada cadena debe estar separada por un solo espacio.
+
+> process_text(["Hi, \n", " Are you having fun?    "])
+"Hi, Are you having fun?"

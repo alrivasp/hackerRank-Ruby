@@ -1,0 +1,37 @@
+def iterate_colors(colors)
+    arr = []
+    colors.each {|c| arr << c}
+    return arr
+end
+
+
+def iterate_colors(colors)
+  colors.enum_for.to_a
+end
+
+
+
+def iterate_colors(colors)
+  colors.select { |obj| obj }
+end
+
+
+def iterate_colors(colors)
+  colors.reduce([]) { |arr, c| arr << c }
+end
+
+
+def iterate_colors(colors)
+ colors_new = []
+    colors.each{ |item| colors_new << item }
+return colors_new
+end
+
+
+include Enumerable
+
+def iterate_colors(colors)
+    colors.each do |color| 
+        [] << color
+    end
+end

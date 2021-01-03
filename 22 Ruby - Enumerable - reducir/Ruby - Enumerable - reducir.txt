@@ -1,0 +1,43 @@
+Un escenario común que surge cuando se usa una colección de cualquier tipo, es conseguir realizar un solo tipo de operación con todos los elementos y recolectar el resultado.
+
+Por ejemplo, una sum(array)función puede querer agregar todos los elementos pasados ​​como matriz y devolver el resultado.
+
+Una abstracción generalizada de la misma funcionalidad se proporciona en Ruby en el nombre de reduce( injectes un alias). Es decir, estos métodos iteran sobre una colección y acumulan el valor de una operación en elementos en un valor base usando un operador y devuelven ese valor base al final.
+
+Tomemos un ejemplo para una mejor comprensión.
+
+>>> (5..10).inject(1) {|product, n| product * n }
+=> 151200
+
+En el ejemplo anterior, tenemos los siguientes elementos: un valor base 1 , un enumerable (5..10) y un bloque con expresiones que indican cómo agregar el valor calculado al valor base (es decir, multiplicar el elemento de la matriz a producto , donde el producto se inicializa con el valor base)
+
+Entonces la ejecución sigue algo como esto:
+
+# loop 1
+n = 1
+product = 1
+return value = 1*1
+
+# loop 2
+n = 2
+product = 1
+return value = 1*2
+
+n = 3
+product = 2
+return value = 2*3
+
+..
+Como puede observar, el valor base se actualiza continuamente a medida que la expresión recorre el elemento del contenedor, devolviendo así el valor final del valor base como resultado.
+
+Otros ejemplos,
+
+>>> (5..10).reduce(1, :*)   # :* is shorthand for multiplication
+=> 151200
+Considere una secuencia aritmético-geométrica donde el  término de la secuencia se denota por . En este desafío, su tarea es completar el summétodo que toma un número entero ny devuelve la suma a los n términos de la serie .
+
+
+
+def sum_terms(n)
+  # your code here
+end

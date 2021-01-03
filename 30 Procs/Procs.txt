@@ -1,0 +1,52 @@
+Pasar bloques es una forma de pasar funciones como argumentos a otras funciones.
+
+Los bloques son una de las pocas excepciones a la regla "todo es un objeto" en Ruby. Los bloques no son objetos y no se pueden guardar en variables.
+
+Los objetos proc son bloques de código que se pueden vincular a un conjunto de variables locales. Puede pensar en unobjeto proc como un bloque "guardado".
+
+Los procesos son una excelente manera de mantener su código SECO . DRY son las siglas de Don't Repeat Yourself .
+
+Ejemplo:
+
+CÓDIGO
+
+def foo(a, b, my_proc)
+    my_proc.call(a, b)
+end
+
+add = proc {|x, y| x + y}
+
+puts foo(15, 10, add)
+SALIDA
+
+25
+En este ejemplo, hemos creado el proc add , que suma dos números.
+El proc add se pasa como parámetro al método foo .
+En el método foo , my_proc.call(a, b)ejecuta proc.
+
+Tarea
+
+Se le proporciona un código parcialmente completo. Su tarea es completar los espacios en blanco ( ______).
+
+El método square_of_sum calcula la suma de los elementos en una matriz de entrada y devuelve el cuadrado de los elementos sumados.
+
+Por ejemplo :
+
+Input array: [1, 2, 3]
+Output: 36
+
+
+
+
+
+
+def square_of_sum (my_array, proc_square, proc_sum)
+    sum = proc_sum.call(my_array)
+    proc_square.call(sum)
+end
+
+proc_square_number = proc { |n| n**2 }
+proc_sum_array     = proc { |n| n.reduce(:+) }
+my_array = gets.split().map(&:to_i)
+
+puts square_of_sum(my_array, proc_square_number, proc_sum_array)

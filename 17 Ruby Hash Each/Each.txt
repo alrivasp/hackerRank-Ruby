@@ -1,0 +1,29 @@
+Ha visto la estructura de control each utilizada en una matriz. Del mismo modo, también está disponible para la Hashcolección.
+
+Activo Hash, funciona de dos formas.
+
+Considere el ejemplo
+
+user = {"viv" : 10, "simmy" : 20, "sp2hari" : 30}
+Usando cada uno, cada elemento se puede iterar como
+
+user.each do |key, value|
+    # some code on individual key, value
+end
+o
+
+user.each do |arr|
+    # here arr[0] is the key and arr[1] is the value
+end
+Su tarea es utilizar eache iterar a través de la colección e imprimir el par clave-valor en líneas separadas.
+
+Insinuación
+
+puts key
+puts value
+
+
+
+def iter_hash(hash)
+    # your code here
+end

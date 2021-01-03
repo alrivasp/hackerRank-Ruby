@@ -1,0 +1,4 @@
+
+def process_text(str)
+ str.reduce {|x, y| x.strip + ' ' + y.strip }
+end

@@ -1,0 +1,24 @@
+Los números, los valores booleanos y las cadenas son algunos de los tipos de datos fundamentales que hemos explorado en nuestros desafíos anteriores. En este conjunto de tutoriales, centraremos nuestra atención en el tipo de datos al que se hace referencia como literales String o Text .
+
+Los tipos de datos de cadena son una secuencia de caracteres, cada uno de los cuales ocupa 1 byte de memoria. Técnicamente, podría representar la cadena usando una matriz (o alguna colección) de caracteres, similar a la de los lenguajes clásicos como C. Cualquier carácter fuera del conjunto de codificación ASCII está restringido en C. ¿Cómo representamos los caracteres fuera de este rango?
+
+Antes de responder esta pregunta, aprendamos sobre las diferentes formas de representar cadenas, qué significan y sus casos de uso.
+
+Ruby proporciona 3 formas de incluir cadenas literales en su código fuente.
+
+Cadenas de comillas simples
+La forma más fácil de agregar texto es rodearlo con símbolos de comillas simples (apóstrofos). Sin embargo, los caracteres como un apóstrofo y una barra invertida dentro de la cadena deben escaparse si están presentes.
+>  ' ¡ Hola !  Programador .  Cómo \' s  que  va ? '
+Comillas dobles cadenas
+entre comillas dobles cadenas son más flexibles, y permiten una secuencia de escape, por ejemplo \t, \nque no hace el trabajo con cadenas entre comillas sencillas. Más importante aún, permiten la incrustación de expresiones arbitrarias. Cuando se crea una cadena, la expresión en la cadena se evalúa, se convierte en una cadena y se inserta en el texto en lugar de la expresión. Este proceso se conoce como interpolación .
+>  "¡Hola! Hay una pestaña \ t aquí. ¿Lo viste?" 
+>  "Mi nombre es Circle y me encanta Pi. Pi es igual a # {Math :: PI}"
+Aquí documentos
+Esto es útil para colocar grandes cantidades de texto sin preocuparse por las secuencias de escape o la evaluación de cadenas. “Aquí documentos” comienzan con <<-. Estos son seguidos inmediatamente por un identificador o una cadena que especifica el delimitador final. (No se permite ningún espacio para evitar ambigüedades con el operador de desplazamiento a la izquierda). El texto del literal de cadena comienza en la siguiente línea y continúa hasta que el texto del delimitador aparece en una línea por sí mismo. Por ejemplo:
+documento  =  << - AQUÍ          #  Nos  empezamos  con  << -  seguido  por  la  que termina  delimitador  AQUÍ 
+Esta  es  una  cadena  literal . 
+Se  dispone de  dos  líneas  y  abruptamente  termina  con  un  carácter de nueva línea ... 
+AQUÍ
+(Ejemplo del lenguaje de programación Ruby )
+
+En este desafío introductorio, su tarea es utilizar cada uno de los tres métodos anteriores para devolver el texto Hello World and others!

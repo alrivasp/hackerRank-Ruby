@@ -1,0 +1,14 @@
+def take(arr, slice_length=1)
+    len = arr.length
+    return [] if slice_length >= len
+    arr[-(len - slice_length)..-1]
+end
+
+
+def take(arr, n=1)
+  arr.delete_if {|x| arr.index(x) < n}
+end
+
+def take(arr, len = 1)
+  arr - arr[0, len]
+end

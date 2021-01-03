@@ -1,0 +1,5 @@
+¡Empecemos con Ruby!
+
+Continúe y escriba el siguiente código en el editor de código:
+
+print "Hello HackerRank!!"

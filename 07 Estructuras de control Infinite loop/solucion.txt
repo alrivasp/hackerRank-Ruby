@@ -1,0 +1,13 @@
+# Option 1
+loop do
+    coder.practice
+    if coder.oh_one?
+        break
+    end
+end
+
+# Option 2
+loop do
+    coder.practice
+    break if coder.oh_one?
+end

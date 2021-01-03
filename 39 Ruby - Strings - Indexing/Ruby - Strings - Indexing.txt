@@ -1,0 +1,60 @@
+Cuando indexa una cadena, extrae o modifica las porciones. Esta es quizás la operación más importante que desea realizar en cadenas. La clase de cadena proporciona un []operador de corchete similar a una matriz , que le permite extraer partes de la cadena, así como alterar el contenido cuando se usa en el lado izquierdo de una asignación.
+
+Considere los siguientes ejemplos:
+
+> str = "Hello World!"
+> str[str.size-1]
+"!"
+> str[-1] # first character from the end of the string
+"!"
+> str[-2] # second last character
+"d"
+> str[0] # first character
+"H"
+
+Más a menudo, querrá extraer partes específicas de la cadena en lugar de caracteres individuales. Para hacer esto, use operandos separados por comas entre corchetes. El primer operando especifica un índice (que puede ser negativo) y el segundo especifica una longitud (que debe ser no negativa).
+
+Considere el siguiente ejemplo:
+
+> str[0,4] # first four characters
+"Hell"
+> str[6,3] # 3 characters starting from index 6 ( 0-indexing )
+"Wor"
+> str[-1, 1] # 1 character starting from the END of string
+"!"
+
+Los mismos ejemplos que se muestran arriba se pueden usar para la asignación / eliminación de caracteres. Podemos insertar caracteres dando una asignación no vacía o eliminar caracteres en el rango dando una asignación vacía.
+
+Considere el siguiente ejemplo:
+
+> str = "Hello"
+> str[str.size, 0] = " World!" # append by assigning at the end of the string
+> str
+"Hello World!"
+> str[5, 0] = "," # insert a comma after the 5th position
+> str[5, 6] = ""  # delete 6 characters starting from index 5. 
+"Hello!"
+> str[5,1] = " World" # replace the string starting from index 5 and of length 1 with the given string. 
+
+¡Pero espera hay mas! Ruby también le permite indexar cadenas usando un objeto Range o Regexp . Discutiremos estos métodos en el futuro.
+
+En este desafío, su tarea es codificar un serial_averagemétodo que se describe a continuación:
+
+Se toma una cadena de ancho fijo en el formato: SSS-XX.XX-YY.YY. SSSes un número de serie de tres dígitos XX.XXy YY.YYson números de dos dígitos que incluyen hasta dos dígitos decimales.
+Devuelve una cadena que contiene la respuesta en formato SSS-ZZ.ZZdonde SSSes el número de serie de esa cadena de entrada y ZZ.ZZes el promedio de XX.XXy YY.YY.
+Todos los números se redondean a dos decimales.
+Por ejemplo:
+
+> serial_average('002-10.00-20.00')
+"002-15.00"
+Puede utilizar la interpolación de cadenas para insertar código Ruby dentro de una cadena.
+
+Por ejemplo:
+
+> tmp = 123
+> "Hello #{tmp}"
+Hello 123
+
+Constraints(Restricciones)
+
+-

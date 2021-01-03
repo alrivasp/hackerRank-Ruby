@@ -1,0 +1,36 @@
+def scoring(array)
+  array.each { |user| user.update_score unless user.is_admin? }
+end
+
+
+def scoring(array)
+    array.reject(&:is_admin?).each(&:update_score)
+end
+
+
+# Option 1
+def scoring(array)
+    # update_score unless the user is admin
+    array.each do |user|
+        unless user.is_admin?
+            user.update_score
+        end
+    end
+end
+
+# Option 2
+def scoring(array)
+    # update_score unless the user is admin
+    array.each do |user|
+        user.update_score unless user.is_admin?
+    end
+end
+
+# Option 3
+def scoring(array)
+    # update_score unless the user is admin
+    array.each { 
+        |user| 
+        user.update_score unless user.is_admin? 
+    }
+end

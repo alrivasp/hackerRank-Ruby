@@ -1,0 +1,13 @@
+Ruby ofrece estructuras de control que le permiten recorrer sus colecciones. Una de esas estructuras de control es each.
+
+Como ya sabes, HackerRank realiza muchos concursos y, por cada usuario que participa en un concurso, actualizamos su puntuación una vez finalizado el concurso. Se le dará un método llamado scoringcon una matriz pasada como argumento. Los elementos de la matriz son de la clase User.
+
+Userla clase tiene un método update_score.
+
+Su tarea es iterar a través de cada uno de los elementos de la matriz utilizando eachy llamar al método update_scoreen cada elemento.
+
+Insinuación
+
+array.each do |user|
+    # call update_score on `user` here
+end

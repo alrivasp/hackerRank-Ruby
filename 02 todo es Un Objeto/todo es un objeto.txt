@@ -1,0 +1,7 @@
+Todo es un objeto en Ruby. Por ejemplo, si escribe
+
+print self
+
+en el editor de código, Ruby lo trata selfcomo el objeto al que se hace referencia actualmente.
+
+¡Darle una oportunidad!

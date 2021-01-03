@@ -1,0 +1,23 @@
+    def skip_animals(animals, skip)
+        arr = []
+        animals.each_with_index do |item, index|
+            if(index >= skip)
+                arr.push("#{index}:#{item}")
+            end
+        end
+        return arr
+    end
+
+
+def skip_animals(animals, skip)
+    animals.map.with_index{|a, index| "#{index}:#{a}" if index >= skip}.compact
+end
+
+
+def skip_animals(animals, skip)
+    results = []
+    animals.drop(skip).each_with_index do |animal, i|
+        results << "#{i+skip}:#{animal}"
+    end
+    results
+end

@@ -1,0 +1,35 @@
+En nuestro tutorial de codificación , aprendimos sobre las diferentes formas en que Ruby 1.8 y Ruby 1.9 (y versiones superiores) representan cadenas internamente. La principal diferencia es una amplia gama de compatibilidad con codificación (no ascii) en las versiones posteriores. Sin embargo, este cambio también revisa la forma en que se iteraron las cadenas entre las dos versiones.
+
+En Ruby 1.8, hay un único eachmétodo (¿recuerdas Enumerable?) Que le permitió iterar sobre líneas de datos. Si bien puede parecer una opción lógica, ¿cómo se puede iterar en cada byte o en cada carácter? Resulta que no estaba tan limpio, y la gente tuvo que recurrir a trucos para algunas de estas funcionalidades.
+
+Con Ruby 1.9, eachse eliminó de la Stringclase y ya no es un Enumerable. En cambio, tenemos opciones más explícitas basadas en lo que necesitamos iterar: bytes, caracteres, líneas o puntos de código.
+
+each_byte itera secuencialmente a través de los bytes individuales que componen una cadena;
+each_charitera los caracteres y es más eficiente que el []operador o la indexación de caracteres;
+each_codepoint itera sobre los valores ordinales de los caracteres de la cadena;
+each_line itera las líneas.
+Por ejemplo:
+
+> money = "¥1000"
+> money.each_byte {|x| p x} # first char represented by two bytes
+194
+165
+49
+48
+48
+48
+> money.each_char {|x| p x} # prints each character
+"¥"
+"1"
+"0"
+"0"
+"0"
+
+Sin duda, Ruby 1.9 hace que la iteración sea más fácil de entender e implementar. Por lo tanto, nos quedaremos con Ruby 1.9 y versiones posteriores para desafíos actuales y otros (a menos que se indique lo contrario).
+
+Desafío: escriba el método count_multibyte_char que toma una cadena como entrada y devuelve el número de caracteres multibyte (tamaño de byte> 1) en ella.
+
+Por ejemplo:
+
+> count_multibyte_char('¥1000')
+1

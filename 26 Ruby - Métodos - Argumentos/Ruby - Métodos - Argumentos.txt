@@ -1,0 +1,26 @@
+En el desafío anterior, aprendimos a usar métodos para abstraer cálculos similares en fragmentos lógicos de código que de otro modo serían difíciles de administrar. Los métodos, en cierto modo, se comportan como una caja negra . El programador trabaja principalmente en 1) entradas, 2) salida esperada y 3) cómo funciona. No tenemos que preocuparnos por los aspectos internos del método. En este conjunto de tutoriales, nos centraremos en comprender los tres aspectos descritos anteriormente.
+
+La capacidad de pasar argumentos permite ocultar la complejidad al programador. Ya hemos visto casos sencillos de pasar varios valores a métodos como variables, pero hay mucho más en los métodos de Ruby.
+
+Considere un caso en el que se invoca un método desde diferentes partes del código con una variación en solo uno de los argumentos. Todos los demás argumentos permanecen constantes. En tales casos, es útil asignar valores predeterminados a las variables. Nos permite evitar pasar un valor para cada argumento, disminuyendo la posibilidad de error.
+
+Por ejemplo,
+
+def prefix(s, len=1)
+  s[0,len]
+end
+
+> prefix("Ruby", 3) # => "Rub"
+> prefix("Ruby")    # => "R"
+
+En este desafío , su tarea consiste en determinar cuál es la toma hace método. Estudie los ejemplos a continuación y luego implemente el método.
+
+> take([1,2,3], 1)
+[2, 3]
+> take([1,2,3], 2)
+[3]
+> take([1,2,3])
+[2, 3]
+
+Nota
+El método se puede invocar como name('Foolan', 'Barik')o, sin los paréntesis, como name 'Foolan', 'Barik'. La última convención puede ser confusa y no se recomienda.

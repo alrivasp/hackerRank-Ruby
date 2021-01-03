@@ -1,0 +1,11 @@
+# Enter your code here
+def strike(str)
+    result = "<strike>#{str}</strike>"
+end
+
+def mask_article(str, arr)
+    arr.each do |word|
+        str.gsub!(word, strike(word))
+    end
+    str
+end

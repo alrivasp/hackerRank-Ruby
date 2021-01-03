@@ -1,0 +1,21 @@
+Currying es una técnica en la que una función acepta parámetros y lo convierte en una secuencia de N funciones, cada una de ellas toma 1 parámetro.
+
+Ejemplo: -
+
+multiply_numbers = -> (x,y) do
+    x*y
+end
+
+doubler = multiply_numbers.curry.(2)
+tripler = multiply_numbers.curry.(3)
+
+puts doubler.(4)    #8
+puts tripler.(4)    #12
+
+En el ejemplo anterior, lambda toma dos parámetros x & y, y devolver el producto de los dos.
+multiply_numbers.curry.(2)devuelve una lambda que toma solo un parámetro necesario para el cálculo.
+
+Tarea
+
+Se le proporciona un código parcialmente completo. Su tarea es completar los espacios en blanco ( _______).
+Escribe un curry, que se rellena previamente con variable .

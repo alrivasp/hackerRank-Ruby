@@ -1,0 +1,18 @@
+def full_name(first, *rest)
+    rest.reduce(first) {|x, y| x + " " + y}
+end
+
+
+
+def full_name(f_name,*rest,l_name)
+    a = rest.reduce(f_name){|x,y| "#{x} #{y}"}
+    "#{a} #{l_name}"
+end
+
+
+def full_name(first, *rest)
+    rest.unshift(first).join(' ')
+end
+
+irb(main):040:0> full_name('david')
+=> "david"

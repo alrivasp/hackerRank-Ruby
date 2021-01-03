@@ -1,0 +1,21 @@
+def rot13(secret_messages)
+  secret_messages.map {|m| m.tr!("a-z", "n-za-m")}
+end
+
+
+
+def rot13(secret_messages) 
+    secret_messages.map { |x| 
+    if (x.ord >= "A".ord) && (x.ord <= "M".ord) then 
+        (x.ord+13).chr  
+    elsif (x.ord >= "N".ord) && (x.ord <= "Z".ord) then 
+        (x.ord-13).chr 
+    elsif (x.ord >= "a".ord) && (x.ord <= "m".ord) then 
+        (x.ord+13).chr  
+    elsif (x.ord >= "n".ord) && (x.ord <= "z".ord) then 
+        (x.ord-13).chr
+    else 
+        x 
+    end
+}
+end

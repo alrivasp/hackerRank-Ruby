@@ -1,0 +1,26 @@
+Otra función que se utiliza a menudo con la recopilación de datos es la que agrupa los elementos según algún resultado de evaluación.
+
+Considere el siguiente ejemplo. Supongamos que tiene una lista de 100 números enteros y desea agruparlos según su valor par e impar.
+
+En Ruby, puede hacer esto fácilmente utilizando el group_bymétodo proporcionado por el módulo Enumerable.
+
+>  ( 1..5 ). group_by  { | x |  x % 2 } 
+{ 1 => [ 1 , 3 , 5 ],  0 => [ 2 ,  4 ]}
+Por supuesto, este es un ejemplo muy simple y su uso puede ser de naturaleza muy complicada.
+
+En este desafío, su tarea es agrupar a los estudiantes en dos categorías correspondientes a sus calificaciones obtenidas en una prueba. La lista de estudiantes se proporcionará en forma de markshash con el nombre del estudiante como clave y las calificaciones obtenidas (de 100) como par de valores, junto con el pass_marksargumento as.
+
+El método group_by_marksdebe devolver un que Hashcontenga una matriz de estudiantes que pasaron como valor a Passedclave y aquellos que fallaron como valor a Failedclave. Si una clave en particular está vacía, no devuelva esa clave.
+
+Por ejemplo,
+
+>  marks  =  { "Ramesh" : 23 ,  "Vivek" : 40 ,  "Duro" : 88 ,  "Mohammad" : 60 } 
+>  group_by_marks ( marcas ,  30 ) 
+=>  { "Fallido" => [[ "Ramesh" ,  23 ]],  "Aprobado" => [[ "Vivek" ,  40 ],  [ "Harsh" ,  88 ],  [ "Mohammad",  60 ]]}
+
+
+
+
+def group_by_marks(marks, pass_marks)
+  # your code here
+end

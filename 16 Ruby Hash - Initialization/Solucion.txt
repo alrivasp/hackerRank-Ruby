@@ -1,0 +1,16 @@
+Some other interesting ways to initialize Hashes from Array
+
+hackerrank = Hash["simmy", 100, "vivmbbs", 200]
+or
+hackerrank = Hash[["simmy", 100], ["vivmbbs", 200]]
+both statements above equivalent to
+
+hackerrank = {"simmy" => 100, "vivmbbs" => 200}
+
+
+
+empty_hash = Hash.new
+default_hash = Hash.new(1)
+hackerrank = Hash.new
+hackerrank["simmy"] = 100
+hackerrank["vivmbbs"] = 200

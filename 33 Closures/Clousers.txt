@@ -1,0 +1,29 @@
+El cierre es una función / método que:
+
+► Puede pasarse como un objeto.
+
+Se puede tratar como una variable, que se puede asignar a otra variable, pasar como un argumento a un método.
+► Recuerda el valor de las variables que ya no están dentro del alcance.
+
+Recuerda los valores de todas las variables que estaban en el alcance cuando se definió la función. Entonces puede acceder a esas variables cuando se llama, incluso si están en un ámbito diferente.
+Ejemplo:
+
+def plus_1(y)
+   x = 100
+   y.call       #remembers the value of x = 1
+end
+
+x = 1
+y = -> { x + 1 }
+puts plus_1(y)  #2
+En este ejemplo, la variable , que está cerrado dentro de la lambda , recuerda sus valores. Aquí, recuerda su valor como .
+
+Blocks, Procs y Lambdas son cierres en Ruby.
+
+Tarea
+
+Se le proporciona un código parcialmente completo. Su tarea es completar los espacios en blanco ( ______).
+
+ block_message_printer imprime el mensaje si el bloque existe.
+ proc_message_printer imprime el mensaje dentro de un Proc.
+ lambda_message_printer imprime el mensaje dentro de un Lambda.

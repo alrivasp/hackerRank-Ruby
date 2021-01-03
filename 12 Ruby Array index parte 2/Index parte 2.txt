@@ -1,0 +1,49 @@
+Aquí hay algunas otras formas de acceder a los objetos de matriz en Ruby.
+
+Para acceder a los elementos del final de la lista, podemos utilizar índices negativos.
+
+Para la matriz,
+
+arr = [9, 5, 1, 2, 3, 4, 0, -1]
+ > arr [-1]
+ => -1
+Se puede acceder al primer elemento de la matriz usando
+ > arr. primero
+ => 9
+Se puede acceder al último elemento de la matriz usando
+ > arr. último
+ => -1
+Se npuede acceder a los primeros elementos de la matriz utilizando
+ arr. toma (3)
+ => [9, 5, 1]
+nSe puede acceder a todo menos a los primeros elementos de la matriz usando
+ arreglo gota (3)
+ => [2, 3, 4, 0, -1]
+En este desafío, debe usar la sintaxis como se explicó anteriormente y completar las funciones en consecuencia.
+
+
+
+
+
+def neg_pos(arr, index)
+    # return the element of the array at the position `index` from the end of the list
+    # Clue : arr[-index]
+end
+
+def first_element(arr)
+    # return the first element of the array
+    # arr.first
+end
+
+def last_element(arr)
+    # return the last element of the array
+    # arr.last
+end
+
+def first_n(arr, n)
+    # return the first n elements of the array
+end
+
+def drop_n(arr, n)
+    # drop the first n elements of the array and return the rest
+end

@@ -1,0 +1,93 @@
+Las lambdas son funciones anónimas. Las lambdas en Ruby son objetos de la clase Proc .
+Son útiles en la mayoría de las situaciones en las que usaría un proc.
+
+La lambda más simple no toma ningún argumento y no devuelve nada como se muestra a continuación:
+
+Ejemplo :
+
+#Ruby version <= 1.8
+    lambda { .... } 
+
+    lambda do
+        ....
+    end
+
+#Ruby version >= 1.9, "stabby lambda" syntax is added
+    -> { .... }
+
+    -> do
+        ....
+    end
+Versión ruby se puede utilizar tanto lambday lambda stabby, ->.
+
+Las lambdas se pueden utilizar como argumentos para funciones de orden superior. También se pueden usar para construir el resultado de una función de orden superior que necesita devolver una función.
+
+Ejemplo :
+
+(un). Lambda que no acepta argumentos.
+
+def area (l, b)
+   -> { l * b } 
+end
+
+x = 10.0; y = 20.0
+
+area_rectangle = area(x, y).call
+area_triangle = 0.5 * area(x, y).()
+
+puts area_rectangle     #200.0
+puts area_triangle      #100.0
+(segundo). Lambda que toma uno o más argumentos.
+
+area = ->(a, b) { a * b }
+
+x = 10.0; y = 20.0
+
+area_rectangle = area.(x, y)
+area_triangle = 0.5 * area.call(x, y)
+
+puts area_rectangle     #200.0
+puts area_triangle      #100.0    
+En el ejemplo anterior, podemos ver que las lambdas se pueden llamar usando .call()y .().
+
+¿Hay alguna diferencia entre lambdas y procs?
+Sí, existe una diferencia entre un proc y un lambda en Ruby .
+
+Tarea
+
+Se le proporciona un código parcialmente completo. Su tarea es completar los espacios en blanco ( ______).
+Existen 5 variables definidas a continuación:
+
+cuadrado es una lambda que eleva al cuadrado un número entero.
+plus_one es una lambda que incrementa un entero por 1.
+into_2 es una lambda que multiplica un entero por 2.
+sumador es una lambda que toma dos enteros y los suma.
+values_only es una lambda que toma un hash y devuelve una matriz de valores hash.
+
+
+
+
+
+# Write a lambda which takes an integer and square it
+square      = ->(a){a**2 }
+
+# Write a lambda which takes an integer and increment it by 1
+plus_one    = ->(b){b+1} 
+
+# Write a lambda which takes an integer and multiply it by 2
+into_2      = -> (c){c*2} 
+
+# Write a lambda which takes two integers and adds them
+adder       = ->(d,e){d+e} 
+
+# Write a lambda which takes a hash and returns an array of hash values
+values_only = ->(f){f.values}
+
+input_number_1 = gets.to_i
+input_number_2 = gets.to_i
+input_hash = eval(gets)
+
+a = square.(input_number_1); b = plus_one.(input_number_2);c = into_2.(input_number_1); 
+d = adder.(input_number_1, input_number_2);e = values_only.(input_hash)
+
+p a; p b; p c; p d; p e

@@ -1,0 +1,16 @@
+Un método puede tomar cero o más parámetros como entrada. Para demostrar esto, miramos las afirmaciones que usamos en HackerRank. A veces, tenemos que verificar si un número dado aestá dentro del rango by c(dondeb  c, y ambos inclusive).
+
+Tres variables a, by cya están definidas. Su tarea es escribir código que verifique si aestá dentro del rango de by cllamando al método range?(que hemos definido para usted como método para este ejemplo) en ay pasando by ccomo argumentos.
+
+Insinuación
+
+a.range?(b, c)
+o
+
+return a.range?(b, c)
+o
+
+a.range? b, c
+o
+
+return a.range? b, c

@@ -1,0 +1,35 @@
+Además de métodos simples para iterar sobre objetos, Ruby Enumerableproporciona una serie de construcciones importantes de orden superior que exploraremos en más desafíos. Uno de esos métodos importantes es el collectmétodo, también conocido como map.
+
+map como sugiere el nombre, toma una función y la mapea (aplica) a una colección de valores uno por uno y devuelve la colección de resultado.
+
+Es decir,
+
+Este método único y poderoso nos ayuda a operar con una gran cantidad de valores a la vez.
+
+Por ejemplo,
+
+>>> [1,2,3].map { |x| 2*x }
+=> [2, 4, 6]
+>>> {:a=>1, :b=>2, :c=>3}.collect { |key, value| 2*value }
+=> [2, 4, 6]
+Tenga en cuenta que estos métodos son diferentes eachen el sentido de que estos métodos devuelven una nueva colección, mientras que el anterior devuelve la colección original, independientemente de lo que suceda dentro del bloque.
+
+En este desafío, su tarea es escribir un método que tome una serie de cadenas (¡que contengan bits de mensajes secretos enemigos!) Y decodifique sus elementos usando el sistema de cifrado ROT13 ; devolviendo una matriz que contiene los mensajes finales.
+
+Por ejemplo, así es como funciona el algoritmo ROT13,
+
+Texto original:
+
+¿  Por  qué el  pollo  cruzó  la  calle ? 
+Gb  trg  gb  gur  bgure  fvqr !
+En aplicación de ROT13,
+
+Jul  qvq  gur  puvpxra  pebff  gur  ebnq ? 
+Para  conseguir  que  el  otro  lado !
+
+
+
+
+def rot13(secret_messages)
+  # your code here
+end

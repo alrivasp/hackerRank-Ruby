@@ -1,0 +1,27 @@
+En este tutorial, aprenderemos sobre los métodos de la clase String que nos ayudan a buscar y reemplazar partes de la cadena según un texto o patrón.
+
+String.include?(string)- Devuelve truesi str contiene la cadena o el carácter dados. ¡Muy simple!
+
+    > "hello".include? "lo"   #=> true  
+    > "hello".include? "ol"   #=> false  
+
+String.gsub(pattern, <hash|replacement>)- Devuelve una nueva cadena con todas las apariciones del patrón sustituidas por el segundo argumento:. El patrón suele ser un Regexp , pero también se puede utilizar una cadena.
+
+
+    "hello".gsub(/[aeiou]/, '*')                  #=> "h*ll*"
+    "hello".gsub(/([aeiou])/, '')             #=> "hll"
+
+Cualquiera de los métodos dependerá del problema que esté tratando de resolver y de la naturaleza del comportamiento de entrada-salida que desee.
+
+En este desafío, su tarea es escribir los siguientes métodos:
+
+mask_articleque agrega etiquetas de tacha alrededor de ciertas palabras en un texto. El método toma 2 argumentos: una cadena y una matriz de palabras . Luego reemplaza todas las instancias de palabras en el texto con la versión modificada.
+Un método auxiliar strike, dado una cadena, agrega etiquetas HTML tachadas a su alrededor. La etiqueta HTML tachada es <strike></strike>.
+Por ejemplo:
+
+> strike("Meow!") # => "<strike>Meow!</strike>"
+> strike("Foolan Barik") # => "<strike>Foolan Barik</strike>"
+> mask_article("Hello World! This is crap!", ["crap"])
+"Hello World! This is <strike>crap</strike>!"
+
+Aplica el método auxiliar para completar tu método principal.

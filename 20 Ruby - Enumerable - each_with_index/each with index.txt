@@ -1,0 +1,25 @@
+En el desafío anterior, aprendimos que el eachmétodo es fundamental para todos los métodos proporcionados por la Enumerableclase. Uno de esos métodos útiles es el each_with_indexque le permite iterar sobre los elementos junto con un índice que mantiene el recuento del elemento.
+
+Por ejemplo,
+
+>  colores  =  [ ' rojo ' ,  ' verde ' ,  ' azul ' ] 
+>  colores . each_with_index  {  | artículo ,  índice |  p  "# {index}: # {item}"  } 
+"0: rojo" 
+"1: verde" 
+"2: azul"
+Como puede observar, el recuento de elementos comienza desde 0.
+
+En este desafío, su tarea es completar el skip_animalsmétodo que toma una animalsmatriz y un skipnúmero entero y devuelve una matriz de todos los elementos excepto el primer skipnúmero de elementos como se muestra en el siguiente ejemplo.
+
+Por ejemplo,
+
+>  skip_animals ([ ' leopardo ' ,  ' oso ' ,  ' zorro ' ,  ' lobo ' ],  2 ) 
+=>  [ "2: zorro" ,  "3: lobo" ]
+Se garantiza que el número de elementos de la animalsmatriz es mayor que el valor de skip.
+
+
+
+
+def skip_animals(animals, skip)
+  # Your code here
+end

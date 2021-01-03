@@ -1,0 +1,38 @@
+En nuestro desafío anterior, exploramos una forma de pasar un número variable de argumentos a nuestros métodos. Si bien puede parecer útil tener una característica, excepto en algunas circunstancias, nunca usará tantas variables para su método. Además, si está pasando varios tipos diferentes de variables al método que luego se asignarán a la matriz, puede ser difícil para el programador que invoca el método recordar el orden correcto para esos argumentos.
+
+Ruby le permite mitigar (parcialmente) este problema pasando a Hashcomo argumento o uno de los argumentos. Por ejemplo, tiene un método que toma un URI para descargar un archivo y otro argumento que contiene Hashotras opciones con nombre (proxy, tiempo de espera, conexiones activas, etc.)
+
+def fetch_file(uri, options)
+    if options.has_key?(:proxy)
+        # do something
+    end
+end
+
+Sin embargo, el principal problema con esta técnica es que no puede establecer fácilmente un valor predeterminado para los argumentos ( Leer más ). Dado que esta construcción es muy útil, Ruby 2 introdujo argumentos de palabras clave que le permiten escribir:
+
+def foo(x, str: "foo", num: 424242)
+  [x, str, num]
+end
+
+foo(13) #=> [13, 'foo', 424242]
+foo(13, str: 'bar') #=> [13, 'bar', 424242]
+
+Además, la introducción del símbolo doble (**), que de forma similar a su contraparte, recopila todas las palabras clave extra nombradas como un parámetro hash.
+
+def foo(str: "foo", num: 424242, **options)
+  [str, num, options]
+end
+
+foo #=> ['foo', 424242, {}]
+foo(check: true) # => ['foo', 424242, {check: true}]
+
+En este desafío, su tarea es escribir un método convert_tempque ayude en la conversión de temperatura. El método recibirá un número como entrada (temperatura), un parámetro con nombre input_scale(escala para la temperatura de entrada) y un parámetro opcional output_scale(escala de temperatura de salida, por defecto en Celsius) y devolverá la temperatura convertida. Debe realizar la interconversión entre las escalas Celsius, Fahrenheit y Kelvin.
+
+Por ejemplo,
+
+> convert_temp(0, input_scale: 'celsius', output_scale: 'kelvin')
+=> 273.15 
+> convert_temp(0, input_scale: 'celsius', output_scale: 'fahrenheit')
+=> 32.0
+
+Tenga en cuenta que los valores de entrada son versiones en minúsculas de las escalas correspondientes.

@@ -1,0 +1,22 @@
+Esta es una pregunta adicional. Siéntete libre de pasar al siguiente desafío.
+
+HackerRank está escrito en RoR y tenemos varias clases definidas en él. Algunos de ellos son
+
+Hacker
+Submission
+TestCase
+Contest
+etc.
+
+Se le ha proporcionado una función en la que un objeto que puede o no ser del tipo mencionado anteriormente se envía como argumento. Tienes que usar la caseestructura de control en Ruby para identificar la clase a la que pertenece el objeto e imprimir la siguiente salida:
+
+si Hacker, salida "¡Es un hacker!"
+si Submission, muestra "¡Es una presentación!"
+si TestCase, muestra "¡Es un caso de prueba!"
+si Contest, muestra "¡Es un concurso!"
+para cualquier otro objeto, la salida "Es un modelo desconocido"
+Nota
+
+use case(cambio de declaración de Ruby)
+utilizar putspara imprimir
+Ruby Docs en el estuche

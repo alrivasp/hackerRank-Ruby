@@ -1,0 +1,28 @@
+Los hash, también llamados matrices asociativas, son estructuras de datos similares a un diccionario que son similares a las matrices. Sin embargo, en lugar de usar números enteros para indexar un objeto, los hash usan cualquier objeto como índice.
+
+En este desafío, su tarea es crear tres Hashcolecciones diferentes como se explica a continuación.
+
+Inicializar un Hash vacío con el nombre de la variable empty_hash
+Insinuación
+
+empty_hash = Hash.new 
+Inicialice un Hash vacío con el nombre de la variable default_hashy el valor predeterminado de cada clave establecida en 1.
+Insinuación
+
+default_hash = Hash.new(1)
+o
+
+default_hash = Hash.new
+default_hash.default = 1
+Inicializar un hash con el nombre de la variable hackerranky tener los pares clave-valor
+
+"simmy", 100  
+"vivmbbs",200
+Insinuación
+
+hackerrank = {"simmy" => 100, "vivmbbs" => 200}
+El hash se puede definir mediante un newmétodo
+
+hackerrank = Hash.new
+hackerrank["simmy"] = 100
+hackerrank["vivmbbs"] = 200

@@ -1,0 +1,64 @@
+Las funciones de orden superior son uno de los componentes clave de la programación funcional.
+
+Una función de orden superior es una herramienta que toma otras funciones como parámetros o las devuelve como resultado.
+
+Los bloques son métodos sin nombre que se pueden pasar a otro método como parámetro.
+Pasar un bloque a un método es una excelente forma de abstracción de datos.
+
+Los bloques se pueden definir con una palabra clave do ... end or curly braces { ... }.
+
+Ejemplo:
+
+un). Pasar un bloque a un método que no toma ningún parámetro
+
+CÓDIGO
+
+def call_block
+    puts "Start of method."
+    yield
+    puts "End of method."
+end 
+call_block do 
+    puts "I am inside call_block method."
+end
+
+SALIDA
+
+Start of method.
+I am inside call_block method.
+End of method.
+
+En este ejemplo, se pasa un bloque al método call_block .
+Para invocar este bloque dentro del método, se utilizó una palabra clave, yield.
+La llamada yieldejecutará el código dentro del bloque que se proporciona al método.
+
+segundo). Pasar un bloque a un método que toma uno o más parámetros.
+
+CÓDIGO
+
+def calculate(a,b)
+    yield(a, b)
+end
+
+puts calculate(15, 10) {|a, b| a - b}   
+SALIDA
+
+5
+En este ejemplo, hemos definido un método de cálculo que toma dos parámetros y .
+La yielddeclaración invoca el bloque con parámetros. y y lo ejecuta.
+
+Tarea
+
+Se le proporciona un código parcialmente completo. Su tarea es completar los espacios en blanco ( _______).
+El método factorial calcula: n!{nXn -1X....2X1}.
+
+
+
+def factorial
+    #_______________________
+end
+
+n = gets.to_i
+factorial do 
+    puts #_______________________
+end

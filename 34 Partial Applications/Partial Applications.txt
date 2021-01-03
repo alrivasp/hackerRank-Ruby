@@ -1,0 +1,36 @@
+En Partial Application , creamos una lambda que toma un parámetro y devuelve una lambda que hace algo con él.
+
+Ejemplo :
+
+multiply_function = -> (number) do
+   -> (another_number) do
+       number * another_number
+   end
+end
+
+doubler = multiply_function.(2)
+tripler = multiply_function.(3)
+
+puts doubler.(4)
+puts tripler.(4)
+En el ejemplo anterior, la lambda tomará un número como parámetro y devolverá una lambda. Cuando llame a esta lambda con otro número , devolverá el producto de los dos.
+
+Tarea
+
+Se le proporciona un código parcialmente completo. Su tarea es completar los espacios en blanco ( _______).
+
+Aquí, la combinación es una variable que almacena una aplicación parcial que calcula la combinación.
+
+
+
+
+
+combination = #__________________________________
+#________________________________________________
+#________________________________________________
+#________________________________________________
+
+n = gets.to_i
+r = gets.to_i
+nCr = combination.(n)
+puts nCr.(r)
